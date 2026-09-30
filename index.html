@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Iyanu ♡</title>
+
+<style>
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: #4b3858;
+    background: #fcf8ff;
+    overflow-x: hidden;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+
+    background:
+        radial-gradient(circle at 15% 15%, rgba(255, 190, 221, .45), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(205, 184, 255, .42), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(244, 218, 255, .55), transparent 35%);
+
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    background-image:
+        radial-gradient(rgba(111, 82, 130, .08) 1px, transparent 1px);
+
+    background-size: 25px 25px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: min(92%, 900px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 18px;
+
+    border: 1px solid rgba(255,255,255,.7);
+    background: rgba(255,255,255,.65);
+    backdrop-filter: blur(18px);
+
+    border-radius: 999px;
+
+    box-shadow: 0 12px 35px rgba(92, 59, 110, .12);
+
+    z-index: 100;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+    color: #77558d;
+}
+
+.nav-links {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-links a {
+    padding: 8px 13px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: #70587e;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    background: #f4dff0;
+    color: #5b3e67;
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+section {
+    min-height: 100vh;
+    padding: 130px 7vw 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: min(1100px, 100%);
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+    color: #9d75a8;
+    margin-bottom: 15px;
+}
+
+.title {
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 8vw, 92px);
+    line-height: .95;
+    color: #513a60;
+}
+
+.subtitle {
+    margin-top: 24px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #79647f;
+    max-width: 570px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 30px;
+    padding: 14px 23px;
+
+    border: none;
+    border-radius: 999px;
+
+    background: #6f527d;
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow: 0 12px 25px rgba(111,82,125,.2);
+
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 30px rgba(111,82,125,.25);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.hero-copy {
+    animation: fadeUp 1s ease both;
+}
+
+.hero-small {
+    display: inline-block;
+
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.7);
+
+    font-size: 12px;
+    color: #8a668f;
+}
+
+.hero-title {
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+    position: relative;
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blob {
+    position: absolute;
+
+    width: 390px;
+    height: 390px;
+
+    border-radius: 52% 48% 45% 55%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffd8ea,
+            #ead9ff
+        );
+
+    transform: rotate(-10deg);
+
+    box-shadow:
+        inset 20px 20px 50px rgba(255,255,255,.6),
+        0 30px 70px rgba(125,90,145,.13);
+
+    animation: floating 5s ease-in-out infinite;
+}
+
+.hero-card {
+    position: relative;
+
+    width: 310px;
+    min-height: 390px;
+
+    padding: 35px;
+
+    border-radius: 28px;
+
+    background: rgba(255,255,255,.8);
+
+    border: 1px solid rgba(255,255,255,.9);
+
+    box-shadow:
+        0 30px 70px rgba(95,66,110,.17);
+
+    transform: rotate(3deg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    z-index: 2;
+}
+
+.hero-card-top {
+    display: flex;
+    justify-content: space-between;
+
+    color: #a275ad;
+    font-size: 12px;
+}
+
+.hero-heart {
+    font-size: 30px;
+}
+
+.hero-card h2 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    line-height: 1;
+
+    color: #66476f;
+}
+
+.hero-card p {
+    line-height: 1.7;
+    font-size: 14px;
+    color: #866e8b;
+}
+
+
+/* =========================================================
+   BIRTHDAY SECTION
+========================================================= */
+
+.birthday {
+    background: rgba(255,255,255,.3);
+}
+
+.birthday-inner {
+    text-align: center;
+}
+
+.birthday-inner .subtitle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.big-birthday {
+    font-family: Georgia, serif;
+
+    font-size: clamp(55px, 11vw, 135px);
+
+    line-height: .9;
+
+    background:
+        linear-gradient(
+            120deg,
+            #b96e9c,
+            #775da8,
+            #c57da8
+        );
+
+    -webkit-background-clip: text;
+    color: transparent;
+
+    margin: 20px 0;
+}
+
+
+/* =========================================================
+   MEMORIES
+========================================================= */
+
+.memories {
+    background: #fbf6fc;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading .subtitle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.memory-card {
+    min-height: 360px;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background: white;
+
+    box-shadow: 0 18px 45px rgba(90,65,100,.09);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: .35s;
+}
+
+.memory-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+}
+
+.memory-number {
+    font-size: 12px;
+    color: #aa85b2;
+}
+
+.memory-icon {
+    margin-top: 55px;
+
+    font-size: 65px;
+
+    filter: drop-shadow(
+        0 12px 10px rgba(110,70,120,.12)
+    );
+}
+
+.memory-card h3 {
+    margin-top: 30px;
+
+    font-family: Georgia, serif;
+    font-size: 25px;
+
+    color: #5b4267;
+}
+
+.memory-card p {
+    margin-top: 12px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: #806c86;
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter-section {
+    position: relative;
+}
+
+.letter-wrap {
+    width: min(820px, 100%);
+}
+
+.letter-paper {
+    position: relative;
+
+    padding: clamp(30px, 7vw, 75px);
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.94),
+            rgba(255,250,255,.94)
+        );
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 35px 80px rgba(78,55,90,.15);
+
+    border: 1px solid rgba(190,160,195,.3);
+}
+
+.letter-paper::before,
+.letter-paper::after {
+    content: "✦";
+
+    position: absolute;
+
+    color: #c998bd;
+
+    font-size: 25px;
+}
+
+.letter-paper::before {
+    top: 25px;
+    left: 28px;
+}
+
+.letter-paper::after {
+    bottom: 25px;
+    right: 28px;
+}
+
+.letter-top {
+    display: flex;
+    justify-content: space-between;
+
+    color: #a17ca9;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.letter-paper h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(38px, 6vw, 65px);
+
+    margin: 40px 0;
+
+    color: #5a4164;
+}
+
+.letter-text {
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+    line-height: 2;
+
+    color: #5f5263;
+}
+
+.letter-text p {
+    margin-bottom: 25px;
+}
+
+.signature {
+    margin-top: 45px;
+
+    font-family: "Brush Script MT", cursive;
+
+    font-size: 35px;
+
+    color: #805582;
+}
+
+
+/* =========================================================
+   ENDING
+========================================================= */
+
+.ending {
+    min-height: 80vh;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f9e5f2,
+            #eee3ff
+        );
+}
+
+.ending h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(45px, 8vw, 85px);
+
+    color: #5a4265;
+}
+
+.ending p {
+    margin: 25px auto 0;
+
+    max-width: 550px;
+
+    line-height: 1.8;
+
+    color: #765e7d;
+}
+
+.final-heart {
+    display: block;
+
+    margin-top: 30px;
+
+    font-size: 42px;
+
+    animation: heartbeat 1.6s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floating {
+    0%,100% {
+        transform: rotate(-10deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-6deg) translateY(-15px);
+    }
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        top: 10px;
+    }
+
+    .nav-links a {
+        padding: 7px 8px;
+        font-size: 11px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero-copy {
+        text-align: center;
+    }
+
+    .subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-visual {
+        height: 410px;
+    }
+
+    .blob {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero-card {
+        width: 260px;
+        min-height: 340px;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-card {
+        min-height: 300px;
+    }
+
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .navbar {
+        width: 94%;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .nav-links {
+        gap: 0;
+    }
+
+    .nav-links a {
+        padding: 6px;
+        font-size: 10px;
+    }
+
+    .hero-card {
+        width: 240px;
+    }
+
+    .letter-paper {
+        padding: 32px 24px;
+    }
+
+    .letter-text {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- =======================================================
+     NAVIGATION
+======================================================= -->
+
+<nav class="navbar">
+
+    <a href="#home" class="logo">
+        for iyanu ♡
+    </a>
+
+    <div class="nav-links">
+        <a href="#home">home</a>
+        <a href="#birthday">birthday</a>
+        <a href="#memories">memories</a>
+        <a href="#letter">letter</a>
+    </div>
+
+</nav>
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section id="home" class="hero">
+
+    <div class="container hero-grid">
+
+        <div class="hero-copy">
+
+            <span class="hero-small">
+                a little website made for you ♡
+            </span>
+
+            <h1 class="title hero-title">
+                Happy<br>
+                Birthday,<br>
+                Iyanu.
+            </h1>
+
+            <p class="subtitle">
+                I made a little corner of the internet
+                just for you because a normal birthday
+                message didn't feel like enough.
+            </p>
+
+            <a href="#birthday" class="btn">
+                open your surprise
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="blob"></div>
+
+            <div class="hero-card">
+
+                <div class="hero-card-top">
+                    <span>09 / 2026</span>
+                    <span>for you</span>
+                </div>
+
+                <div>
+                    <div class="hero-heart">
+                        ♡
+                    </div>
+
+                    <h2>
+                        You deserve
+                        a beautiful day.
+                    </h2>
+                </div>
+
+                <p>
+                    made with love,
+                    from one friend to another.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     BIRTHDAY
+======================================================= -->
+
+<section id="birthday" class="birthday">
+
+    <div class="container birthday-inner reveal">
+
+        <div class="eyebrow">
+            today is about you
+        </div>
+
+        <div class="big-birthday">
+            HAPPY<br>
+            BIRTHDAY
+        </div>
+
+        <p class="subtitle">
+            I hope today gives you a million reasons
+            to smile and reminds you how loved you are.
+        </p>
+
+        <a href="#memories" class="btn">
+            keep going ↓
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     MEMORIES
+======================================================= -->
+
+<section id="memories" class="memories">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="eyebrow">
+                little memories
+            </div>
+
+            <h2 class="title">
+                Things I remember.
+            </h2>
+
+            <p class="subtitle">
+                Some moments are small,
+                but somehow they stay with you.
+            </p>
+
+        </div>
+
+
+        <div class="memory-grid">
+
+            <article class="memory-card reveal">
+
+                <span class="memory-number">
+                    01 — THE CALLS
+                </span>
+
+                <div class="memory-icon">
+                    ☎︎
+                </div>
+
+                <h3>
+                    Late conversations
+                </h3>
+
+                <p>
+                    I love the moments when we're
+                    just on a call, talking, laughing,
+                    and being ourselves.
+                </p>
+
+            </article>
+
+
+            <article class="memory-card reveal">
+
+                <span class="memory-number">
+                    02 — THAT NIGHT
+                </span>
+
+                <div class="memory-icon">
+                    ♫
+                </div>
+
+                <h3>
+                    Dancing together
+                </h3>
+
+                <p>
+                    I still remember dancing with you
+                    and your friends on the call.
+                    It was honestly so memorable.
+                </p>
+
+            </article>
+
+
+            <article class="memory-card reveal">
+
+                <span class="memory-number">
+                    03 — FRIENDSHIP
+                </span>
+
+                <div class="memory-icon">
+                    ♡
+                </div>
+
+                <h3>
+                    You being you
+                </h3>
+
+                <p>
+                    You're such a kind and playful person,
+                    and that's one of the things I love
+                    about you the most.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     LETTER
+======================================================= -->
+
+<section id="letter" class="letter-section">
+
+    <div class="letter-wrap reveal">
+
+        <article class="letter-paper">
+
+            <div class="letter-top">
+                <span>DEAR IYANU</span>
+                <span>♡</span>
+            </div>
+
+
+            <h2>
+                A letter<br>
+                for you.
+            </h2>
+
+
+            <div class="letter-text">
+
+                <p>
+                    Dear Iyanu,
+                </p>
+
+                <p>
+                    Happy birthday, Iyanu! I hope you have
+                    the best birthday. You'll get everything
+                    you want, and you'll become who you want
+                    to be in the future.
+                </p>
+
+                <p>
+                    I love you, everything about you.
+                    You're such a kind and playful person.
+                    You're everything, and I love when we're
+                    on a call and I danced with you and your
+                    friends. It was so memorable.
+                </p>
+
+                <p>
+                    I hope we stay friends forever,
+                    and I hope we'll meet in person soon.
+                </p>
+
+                <p>
+                    I love you sincerely,
+                </p>
+
+                <div class="signature">
+                    Noina :)
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     END
+======================================================= -->
+
+<section class="ending">
+
+    <div class="container reveal">
+
+        <div class="eyebrow">
+            one last thing
+        </div>
+
+        <h2>
+            Stay you.
+        </h2>
+
+        <p>
+            No matter where life takes us,
+            I hope we stay friends for a very,
+            very long time.
+        </p>
+
+        <span class="final-heart">
+            ♡
+        </span>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const observer =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+
+revealElements.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+/* =========================================================
+   SMOOTH ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+    document.querySelectorAll("section[id]");
+
+const navLinks =
+    document.querySelectorAll(".nav-links a");
+
+
+const sectionObserver =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    navLinks.forEach(link => {
+
+                        link.style.background = "transparent";
+                        link.style.color = "#70587e";
+
+                    });
+
+                    const active =
+                        document.querySelector(
+                            `.nav-links a[href="#${entry.target.id}"]`
+                        );
+
+                    if (active) {
+
+                        active.style.background = "#f4dff0";
+                        active.style.color = "#5b3e67";
+
+                    }
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.55
+        }
+    );
+
+
+sections.forEach(section => {
+
+    sectionObserver.observe(section);
+
+});
+
+
+/* =========================================================
+   LITTLE FLOATING SPARKLES
+========================================================= */
+
+function createSparkle() {
+
+    const sparkle =
+        document.createElement("div");
+
+    sparkle.innerHTML = "✦";
+
+    sparkle.style.position = "fixed";
+    sparkle.style.left =
+        Math.random() * 100 + "vw";
+    sparkle.style.top =
+        Math.random() * 100 + "vh";
+
+    sparkle.style.fontSize =
+        (8 + Math.random() * 10) + "px";
+
+    sparkle.style.color =
+        Math.random() > .5
+            ? "#c895bd"
+            : "#a992cf";
+
+    sparkle.style.opacity =
+        ".15";
+
+    sparkle.style.pointerEvents =
+        "none";
+
+    sparkle.style.zIndex =
+        "-1";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => {
+
+        sparkle.remove();
+
+    }, 5000);
+
+}
+
+
+setInterval(createSparkle, 900);
+
+
+/* =========================================================
+   CONSOLE MESSAGE
+========================================================= */
+
+console.log(
+    "Made with love for Iyanu ♡"
+);
+
+</script>
+
+</body>
+</html>
